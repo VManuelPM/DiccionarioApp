@@ -12,9 +12,31 @@
       </ion-col>
     </ion-row>
 
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label>Idioma</ion-label>
+          <ion-select placeholder="Seleccione" formControlName="languageSelect">
+            <ion-select-option value="en">English</ion-select-option>
+            <ion-select-option value="hi">Hindi</ion-select-option>
+            <ion-select-option value="es">Spanish</ion-select-option>
+            <ion-select-option value="fr">French</ion-select-option>
+            <ion-select-option value="ja">Japanese</ion-select-option>
+            <ion-select-option value="ru">Russian</ion-select-option>
+            <ion-select-option value="de">German</ion-select-option>
+            <ion-select-option value="it">Italian</ion-select-option>
+            <ion-select-option value="ko">Korean</ion-select-option>
+            <ion-select-option value="pt-BR">Brazilian Portuguese</ion-select-option>
+            <ion-select-option value="ar">Arabic</ion-select-option>
+            <ion-select-option value="tr">Turkish</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
     <ion-row class="ion-justify-content-center">
       <ion-col>
-        <ion-button color="success" type="submit" [disabled] = "!wordForm.valid">Buscar</ion-button>
+        <ion-button color="success" type="submit" [disabled]="!wordForm.valid">Buscar</ion-button>
       </ion-col>
     </ion-row>
   </form>

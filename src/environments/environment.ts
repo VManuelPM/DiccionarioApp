@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'https://api.dictionaryapi.dev/api/v2/entries/en'
+  baseUrl: 'https://api.dictionaryapi.dev/api/v2/entries'
 };
 
 /*

@@ -11,7 +11,7 @@ export class WordsService {
   
   constructor(private http: HttpClient) { }
 
-  getWord(word: string){
-    return this.http.get(`${this.baseUrl}/${word}`);
+  getWord(language: string, word: string){
+    return this.http.get(`${this.baseUrl}/${language}/${word}`);
   }
 }

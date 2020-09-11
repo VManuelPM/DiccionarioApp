@@ -16,10 +16,12 @@ export class ContentComponent implements OnInit, OnDestroy {
   meanings: Meaning[];
   definition: Definition;
   definitions: Definition[] = [];
+  language: string;
 
   constructor(private wordService: WordsService, public fb: FormBuilder) {
     this.wordForm = this.fb.group({
-      wordInput: ['', Validators.required]
+      wordInput: ['', Validators.required],
+      languageSelect: ['', Validators.required]
     });
    }
 
@@ -32,10 +34,11 @@ export class ContentComponent implements OnInit, OnDestroy {
   getWord() {
     this.definitions = [];
     this.word = this.wordForm.get('wordInput').value;
-    this.wordService.getWord(this.word).subscribe(
+    this.language = this.wordForm.get('languageSelect').value;
+    this.wordService.getWord(this.language, this.word).subscribe(
       res => {
         this.meanings = res['0'].meanings;
-  
+
         for (const data of this.meanings) {
           for(const da of data.definitions){
             this.definition = da;
@@ -43,7 +46,7 @@ export class ContentComponent implements OnInit, OnDestroy {
             this.definitions.push(this.definition);
           }
         }
-        
+
         console.log("Definiciones Array", this.definitions);
       },
       err => {
