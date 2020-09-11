@@ -1,5 +1,5 @@
 "# DiccionarioApp" 
 
-Api https://dictionaryapi.dev/
+Api utilizada https://dictionaryapi.dev/
 
 ![alt text](src/assets/images/muestra.gif)
